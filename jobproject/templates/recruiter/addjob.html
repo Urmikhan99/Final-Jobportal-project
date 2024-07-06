@@ -1,0 +1,21 @@
+{% extends 'common/base.html' %}
+
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Job Posting Form</title>
+</head>
+<body>
+    <h1>Job Posting Form</h1>
+    <form action="{% url 'addjob' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+            {{form}}
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
+{% endblock content %}
